@@ -1,19 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
-
+/* Optimized CSS with system font fallbacks and performance improvements */
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
   color: #333;
   background-color: #f4f4f4;
+  margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
 }
 
 .survey-form {
-  width: 500px;
+  width: 100%;
+  max-width: 500px;
   margin: 0 auto;
   text-align: left;
   background-color: white;
   border-radius: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 30px;
+  box-sizing: border-box;
 }
 
 .logo {
@@ -23,6 +27,7 @@ body {
 
 .logo img {
   width: 150px;
+  height: auto;
 }
 
 h2 {
@@ -44,21 +49,29 @@ p {
 label {
   display: block;
   font-size: 18px;
+  margin-bottom: 5px;
+  font-weight: 500;
 }
 
-input[type="text"], input[type="email"], input[type="number"], textarea {
+input[type="text"], 
+input[type="email"], 
+input[type="number"], 
+textarea {
   width: 100%;
   height: 35px;
-  border: 1px solid #ccc;
+  border: 1px solid #ddd;
   border-radius: 3px;
   font-size: 16px;
   padding: 0 10px;
   box-sizing: border-box;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  transition: border-color 0.2s ease;
 }
 
 textarea {
   height: 100px;
   resize: none;
+  padding: 10px;
 }
 
 input[type="submit"] {
@@ -71,7 +84,8 @@ input[type="submit"] {
   border-radius: 3px;
   cursor: pointer;
   margin-top: 20px;
-  transition: all 0.2s;
+  transition: all 0.2s ease;
+  font-weight: 500;
 }
 
 input[type="submit"]:hover {
@@ -79,15 +93,33 @@ input[type="submit"]:hover {
 }
 
 input[type="submit"]:active {
-  transform: scale(0.9);
+  transform: scale(0.95);
 }
 
-input[type="text"], input[type="email"], input[type="number"], textarea {
-  border: 1px solid #ddd;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
-}
-
-input[type="text"]:focus, input[type="email"]:focus, input[type="number"]:focus, textarea:focus {
+input[type="text"]:focus, 
+input[type="email"]:focus, 
+input[type="number"]:focus, 
+textarea:focus {
   border: 1px solid #4CAF50;
   outline: none;
+}
+
+/* Responsive design for mobile devices */
+@media (max-width: 600px) {
+  .survey-form {
+    padding: 20px;
+    margin: 10px;
+  }
+  
+  input[type="submit"] {
+    width: 100%;
+  }
+  
+  h2 {
+    font-size: 20px;
+  }
+  
+  label {
+    font-size: 16px;
+  }
 }
